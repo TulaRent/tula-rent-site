@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Фильтр аренды — Тула</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; padding: 20px; max-width: 800px; margin: auto; }
+        h1 { text-align: center; }
+        .section { background: #fff; padding: 15px 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .section h2 { font-size: 18px; margin-bottom: 10px; }
+        .input-group { margin-bottom: 10px; }
+        label { margin-right: 10px; display: inline-block; margin-bottom: 5px; }
+        input[type="text"], input[type="number"] { width: 100px; padding: 5px; margin-right: 5px; }
+        .btn { padding: 10px 20px; background: #000; color: #fff; border: none; cursor: pointer; border-radius: 5px; }
+        .btn:hover { background: #333; }
+        .checkbox-group, .radio-group { margin-bottom: 10px; }
+        .checkbox-group label, .radio-group label { display: inline-block; margin-right: 15px; }
+    </style>
+</head>
+<body>
+
+<h1>Фильтр аренды — Тула</h1>
+
+<form action="#" method="POST">
+
+    <div class="section">
+        <h2>Тип жилья</h2>
+        <div class="radio-group">
+            <label><input type="radio" name="type" value="flat"> Квартира</label>
+            <label><input type="radio" name="type" value="room"> Комната</label>
+            <label><input type="radio" name="type" value="either"> Квартира или комната</label>
+            <label><input type="radio" name="type" value="house"> Дом</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Количество комнат</h2>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="studio"> Студия</label>
+            <label><input type="checkbox" name="rooms" value="1"> 1</label>
+            <label><input type="checkbox" name="rooms" value="2"> 2</label>
+            <label><input type="checkbox" name="rooms" value="3"> 3</label>
+            <label><input type="checkbox" name="rooms" value="4"> 4</label>
+            <label><input type="checkbox" name="rooms" value="5+"> 5+</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Стоимость, ₽</h2>
+        <label>от <input type="number" name="price_min"></label>
+        <label>до <input type="number" name="price_max"></label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="no_commission"> Без комиссии</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ремонт</h2>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="repair" value="babushkin"> Бабушкин</label>
+            <label><input type="checkbox" name="repair" value="budget"> Бюджетный</label>
+            <label><input type="checkbox" name="repair" value="euro"> Евроремонт</label>
+            <label><input type="checkbox" name="repair" value="design"> Дизайнерский</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Расположение</h2>
+        <div class="input-group">
+            <label>Округ/район <input type="text" name="district"></label>
+            <label>Добавить метро <input type="text" name="metro"></label>
+            <label>Время до метро <input type="text" name="metro_time"></label>
+        </div>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="park_near"> Парк в пешей доступности</label>
+            <label><input type="checkbox" name="no_noise"> Без шумных дорог рядом</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Площадь</h2>
+        <label>Общая м²: от <input type="number" name="area_min"> до <input type="number" name="area_max"></label><br>
+        <label>Кухня м²: от <input type="number" name="kitchen_min"> до <input type="number" name="kitchen_max"></label>
+    </div>
+
+    <div class="section">
+        <h2>Этаж / Этажность / Год постройки</h2>
+        <label>Этаж: от <input type="number" name="floor_min"> до <input type="number" name="floor_max"></label><br>
+        <label>Этажей в доме: от <input type="number" name="floors_min"> до <input type="number" name="floors_max"></label><br>
+        <label>Год постройки: от <input type="number" name="year_min"> до <input type="number" name="year_max"></label>
+    </div>
+
+    <div class="section">
+        <h2>Тип/Материал дома</h2>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="material" value="monolith"> Монолитный</label>
+            <label><input type="checkbox" name="material" value="brick-monolith"> Кирпично-монолитный</label>
+            <label><input type="checkbox" name="material" value="brick"> Кирпичный</label>
+            <label><input type="checkbox" name="material" value="stalinka"> Сталинский</label>
+            <label><input type="checkbox" name="material" value="block"> Блочный</label>
+            <label><input type="checkbox" name="material" value="panel"> Панельный</label>
+            <label><input type="checkbox" name="material" value="wood"> Деревянный</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ограничения</h2>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="no_children_ban"> Без явного запрета на детей</label>
+            <label><input type="checkbox" name="no_pets_ban"> Без явного запрета на животных</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Уведомления об объявлениях</h2>
+        <div class="radio-group">
+            <label><input type="radio" name="notifications" value="new_only"> Только новые</label>
+            <label><input type="radio" name="notifications" value="all_suitable"> Все подходящие</label>
+        </div>
+    </div>
+
+    <div style="text-align: center;">
+        <button class="btn" type="submit">Сохранить</button>
+    </div>
+
+</form>
+
+</body>
+</html>
